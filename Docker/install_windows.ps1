@@ -25,4 +25,4 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 # Install Docker Desktop
 
-choco install docker-desktop
+choco install docker-desktop -y
