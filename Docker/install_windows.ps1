@@ -22,7 +22,7 @@ wsl --set-default-version 2
 
 # Install Ubuntu for WSL
 
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-2004 -OutFile ubuntu.appx -UseBasicParsing
+Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile ubuntu.appx -UseBasicParsing
 
 Add-AppxPackage .\ubuntu.appx
 
