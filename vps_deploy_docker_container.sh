@@ -37,7 +37,7 @@ REPOSITORY_URI=$DOCKER_HOST/$DOCKER_REPONAME
 echo Build started on $(date)
 echo Building the Docker image...
 # build image
-docker build -t $REPOSITORY_URI:latest -t $REPOSITORY_URI:$IMAGE_TAG .
+docker build -t $REPOSITORY_URI:latest .
 
 echo Build completed on $(date)
 echo Pushing the Docker images
