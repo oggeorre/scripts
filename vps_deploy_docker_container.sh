@@ -53,4 +53,4 @@ COMMAND_6="curl -L https://raw.githubusercontent.com/lagenhetsbyte/build-scripts
 COMMAND_7="sudo docker image prune -a -f"
 
 echo Connecting and running commands on remote server
-ssh -o StrictHostKeyChecking=no -i "$SSH_KEY_DIR" "$VPS_USER"@"$VPS_HOST" ""$COMMAND_1"; "$COMMAND_2"; "$COMMAND_3"; "$COMMAND_4"; "$COMMAND_5"; "$COMMAND_6"; "$COMMAND_7";"
+ssh -o StrictHostKeyChecking=no "$VPS_USER"@"$VPS_HOST" ""$COMMAND_1"; "$COMMAND_2"; "$COMMAND_3"; "$COMMAND_4"; "$COMMAND_5"; "$COMMAND_6"; "$COMMAND_7";"
