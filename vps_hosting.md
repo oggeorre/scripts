@@ -1,7 +1,6 @@
 
 Reverse proxy:
-docker run -d -e LETSENCRYPT_EMAIL=name@example.org -v /var/run/docker.sock:/var/run/docker.sock:ro -p 80:80 -p 443:443 robbertkl/proxy
+sudo docker rm proxy -f && sudo docker run -d --name proxy --net base  --restart on-failure -p 80:80 -p 443:443 -p 8999:8999 -e RESOLVER_ADDRESS="9.9.9.9 ipv6=off" -e SITES='app.test.com=containername:port;' -v ssl-data:/etc/resty-auto-ssl valian/docker-nginx-auto-ssl:latest
 
-
-Note: "-l proxy.host=example.org,www.example.org":
-docker run -d -l proxy.host=example.org,www.example.org <image>
+STAGING: 
+-e LETSENCRYPT_URL="https://acme-staging-v02.api.letsencrypt.org/directory"
