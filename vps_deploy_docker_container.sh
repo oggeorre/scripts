@@ -11,7 +11,6 @@ set -e
 #CONTAINER_NAME
 #VPS_HOST
 #VPS_USER
-#SSH_KEY_DIR
 #DOCKER_RUN_COMMAND
 
 echo "Variables:"
