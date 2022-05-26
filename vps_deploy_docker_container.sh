@@ -37,12 +37,12 @@ REPOSITORY_URI=$DOCKER_HOST/$DOCKER_REPONAME
 echo Build started on $(date)
 echo Building the Docker image...
 # build image
-docker build -t latest -t $IMAGE_TAG .
+docker build -t $REPOSITORY_URI:latest -t $REPOSITORY_URI:$IMAGE_TAG .
 
 echo Build completed on $(date)
 echo Pushing the Docker images
 # push image
-docker push $DOCKER_REPONAME:latest
+docker push $REPOSITORY_URI:latest
 
 COMMAND_1="echo ""$DOCKER_PASSWORD"" | docker login https://"$DOCKER_HOST" --username "$DOCKER_USERNAME" --password-stdin"
 COMMAND_2="sudo docker pull "$REPOSITORY_URI":latest"
