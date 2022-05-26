@@ -28,7 +28,7 @@ done
 echo Logging in to Docker repo...
 
 # login to Docker repo
-docker login $DOCKER_HOST --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+echo "$DOCKER_PASSWORD" | docker login $DOCKER_HOST --username $DOCKER_USERNAME --password-stdin
 
 CONTAINER=$CONTAINER_NAME
 
@@ -44,7 +44,7 @@ echo Pushing the Docker images
 # push image
 docker push $REPOSITORY_URI:latest
 
-COMMAND_1="docker login "$DOCKER_HOST" --username "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD""
+COMMAND_1="echo ""$DOCKER_PASSWORD"" | docker login "$DOCKER_HOST" --username "$DOCKER_USERNAME" --password-stdin"
 COMMAND_2="sudo docker pull "$REPOSITORY_URI":latest"
 COMMAND_3="sudo docker rm "$CONTAINER" -f || true"
 COMMAND_4="sudo docker volume create data || true"
